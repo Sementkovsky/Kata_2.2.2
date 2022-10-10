@@ -1,11 +1,13 @@
-package service;
+package web.dao;
 
-import model.Car;
+import org.springframework.stereotype.Component;
+import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarServiceImpl implements CarService {
+@Component
+public class CarDAOImpl implements CarDAO {
 
     Car car1 = new Car("Peugeot", "3008", 195);
     Car car2 = new Car("Porsche", "Boxter", 229);
@@ -23,7 +25,10 @@ public class CarServiceImpl implements CarService {
         carList.add(car5);
     }
 
-    public List<Car> carsSet(int number) {
+    public List<Car> getCarSet(int number) {
         return carList.subList(0, number > 5 ? 5 : number);
     }
 }
+
+
+
